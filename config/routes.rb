@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :new, :show]
+
+  get 'users/list' => 'users#list'
+  resources :users, only: [:index, :new, :create, :show]
 
   root 'static_pages#index'
 
