@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
   get 'users/list' => 'users#list'
   resources :users, only: [:index, :new, :create, :show]
 
