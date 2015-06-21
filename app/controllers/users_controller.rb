@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       # redirect to "users/:id"
       flash[:success] = "Welcome to Bloggoor"
+      log_in @user
       redirect_to @user
     else
       # Render the form again; 
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def list
