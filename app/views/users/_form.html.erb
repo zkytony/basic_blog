@@ -1,4 +1,6 @@
 <%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+
   <%= f.label :email %><br />
   <%= f.email_field :email %><br />
 
