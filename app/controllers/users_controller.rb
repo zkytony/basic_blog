@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: :destroy
 
   def index
 
@@ -23,11 +24,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:id])
+    @blogs = @user.blogs
   end
 
   def list
     @users = User.all
+  end
+
+  def destroy
+    log_out
+    @user.destroy
+    flash[:success] = "User deleted"
+    redirect_to root_url
   end
 
   private
