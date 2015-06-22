@@ -1,12 +1,4 @@
-<h1>Bloggoor</h1>
-<p>What ever you are, you will like bloggoor.</p>
-<% if logged_in? %>
-  <%= link_to 'Home', user_path(@current_user) %>
-  <%= link_to 'Log out', logout_path, method: :delete%>
-<% else %>
-  <%= link_to 'Sign up', new_user_path %>
-  <%= link_to 'Sign in', login_path %><br />
-<% end %>
-
-<%= link_to 'List of all users', users_list_path %>
-
+<div class="jumbotron">
+  <h1>Bloggoor</h1>
+  <p>What ever you are, you will like bloggoor.</p>
+</div>

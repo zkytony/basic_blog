@@ -1,7 +1,17 @@
 <h1>List of Users</h1>
-<ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Age of membership</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @users.each do |user| %>
-    <li><%= link_to user.email, user_path(user) %>, registered <%= time_ago_in_words(user.created_at) %> ago </li>
+    <tr>
+      <td><%= link_to user.email, user_path(user) %></td>
+      <td>registered <%= time_ago_in_words(user.created_at) %> ago </td>
+    </tr>
   <% end %>
-</ul>
-<%= link_to 'Back', root_path %>
+  </tbody>
+</table>

@@ -1,7 +1,8 @@
 <% provide(:title, "Sign up") %>
-<h1>Sign up</h1>
-<%= render partial: "shared/signin_up_form", :locals => {:for_what => @user, 
-							 :url => users_path,
-							 :sign_up => true, 
-							 :submit_msg => "Sign up"} %>
-<%= link_to 'Back', root_path %>
+<div class="sign-in-up-form">
+  <h1>Sign up</h1>
+  <%= render partial: "shared/signin_up_form", :locals => {:for_what => @user, 
+							   :url => users_path,
+							   :sign_up => true, 
+							   :submit_msg => "Sign up"} %>
+</div>

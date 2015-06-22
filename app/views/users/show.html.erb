@@ -2,15 +2,26 @@
 <h1>Hi, <%= @user.email %></h1>
 <p>Thank you for being a member for <%= time_ago_in_words(@user.created_at) %></p>
 <% if at_home?(@user) %>
-  <h3><%= link_to 'Write a blog', new_user_blog_path(current_user) %></h3>
+  <%= link_to 'Write a blog', new_user_blog_path(current_user), class: "btn btn-lg btn-primary" %>
 <% end %>
-<ul>
-<% @user.blogs.each do |blog| %>
-  <li><h4><%= link_to blog.title, user_blog_path(@user, blog) %></h4></li>
-<% end %>
-</ul>
-<% if at_home?(@user) %>
-  <%= link_to 'Destroy', user_path(current_user), method: :delete%>
-<% end %>
-<%= link_to 'Back', root_path %>
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>When</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.blogs.each do |blog| %>
+      <tr>
+	<td><%= link_to blog.title, user_blog_path(@user, blog) %></td>
+	<td><%= time_ago_in_words(blog.created_at)%> ago</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if at_home?(@user) %>
+  <%= link_to 'Destroy', user_path(current_user), method: :delete, class: "btn btn-danger" %>
+<% end %>

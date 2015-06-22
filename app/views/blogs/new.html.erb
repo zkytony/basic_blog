@@ -1,4 +1,5 @@
 <% provide(:title, "New Blog") %>
+<%= link_to 'Back', user_path(current_user), class: "btn btn-sm btn-info" %>
+<hr>
 <h1>Write a blog</h1>
 <%= render partial: "form" %>
-<%= link_to 'Back', user_path(current_user) %>

@@ -4,14 +4,14 @@
   <% end %>
 
   <%= f.label :email %><br />
-  <%= f.email_field :email %><br />
+  <%= f.email_field :email, class: "form-control" %><br />
 
   <%= f.label :password %><br />
-  <%= f.password_field :password %><br />
+  <%= f.password_field :password, class: "form-control" %><br />
 
   <% if sign_up %>
     <%= f.label :password_confirmation, "Confirmation" %><br />
-    <%= f.password_field :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, class: "form-control" %><br />
   <% end %>
 
   <%= f.submit submit_msg, class: "btn btn-primary" %>
