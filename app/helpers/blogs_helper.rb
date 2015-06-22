@@ -6,7 +6,11 @@ module BlogsHelper
     end
 
     def by_me?(blog)
-      !current_user.blogs.find_by(id: blog.id).nil?
+      if logged_in?
+        !current_user.blogs.find_by(id: blog.id).nil?
+      else
+        false
+      end
     end
 
 end
