@@ -1,7 +1,11 @@
 module UsersHelper
 
   def at_home?(user)
-    current_user.id.eql? user.id
+    if logged_in?
+      current_user.id.eql? user.id
+    else
+      false
+    end
   end
 
 end
