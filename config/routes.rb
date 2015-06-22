@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   get 'users/list' => 'users#list'
-  resources :users, only: [:index, :new, :create, :show]
+  resources :users, only: [:index, :new, :create, :show] do
+    resources :blogs, only: [:new, :create, :show, :destroy]
+  end
+  
 
   root 'static_pages#index'
 
