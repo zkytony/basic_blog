@@ -1,3 +1,13 @@
+<% provide(:title, "Home") %>
 <h1>Hi, <%= @user.email %></h1>
 <p>Thank you for being a member for <%= time_ago_in_words(@user.created_at) %></p>
+<% if at_home?(@user) %>
+  <h3><%= link_to 'Write a blog', new_user_blog_path(current_user) %></h3>
+<% end %>
+<ul>
+<% @user.blogs.each do |blog| %>
+  <li><h4><%= link_to blog.title, user_blog_path(@user, blog) %></h4></li>
+<% end %>
+</ul>
 <%= link_to 'Back', root_path %>
+
