@@ -1,0 +1,11 @@
+<%= form_for(:blog, url: user_blogs_path(current_user) ) do |f| %>
+  
+  <h3><%= f.label :title %></h3>
+  <%= f.text_field :title %>
+
+  <h3><%= f.label :content %></h3>
+  <%= f.text_area :content, :size => "30x20" %><br />
+
+  <%= f.submit class: "btn btn-primary" %>
+  
+<% end %>
