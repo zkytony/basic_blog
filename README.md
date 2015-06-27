@@ -11,3 +11,5 @@ It also has Bootstrap styles.
 Clone this repository;
 
 Add config/secrets.yml into your cloned repository. You can generate a random secret key for development and test by rake secret
+
+You will need to create a database for this application, and modify the `config/database.yml` accordingly
