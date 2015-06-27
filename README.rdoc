@@ -1,7 +1,0 @@
-Basic Blog
-
-A very basic blogging app built with Rails, using MySQL for database models.
-
-First little project with Rails. This is a great practice, involving sessions, sign up, log in stuffs.
-
-It also has Bootstrap styles.
