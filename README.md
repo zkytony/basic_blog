@@ -6,6 +6,11 @@ First little project with Rails. This is a great practice, involving sessions, s
 
 It also has Bootstrap styles.
 
+##### Versions:
+* Ruby: 2.2.1p85
+* Rails: 4.2.1
+* MongoDB shell: 2.4.14
+
 ### Setup
 
 Clone this repository;
