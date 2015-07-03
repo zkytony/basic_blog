@@ -23,5 +23,6 @@
 </table>
 
 <% if at_home?(@user) %>
+  <%= link_to 'Update', edit_user_path(current_user), class: "btn btn-info" %>
   <%= link_to 'Destroy', user_path(current_user), method: :delete, class: "btn btn-danger" %>
 <% end %>

@@ -1,0 +1,10 @@
+<% provide(:title, "Update Profile") %>
+<h1>Update User Profile</h1>
+<div class="sign-in-up-form">
+  <%= render partial: "shared/signin_up_form", :locals => {:for_what => @user, 
+							   :url => user_path(@user),
+							   :sign_up => false, 
+							   :update => true,
+							   :submit_msg => "Update"} %>
+</div>
+
