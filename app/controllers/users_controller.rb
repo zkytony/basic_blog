@@ -32,6 +32,19 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def edit
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile Updated"
+      redirect_to @user
+    else
+      render 'update'
+    end
+  end
+
   def destroy
     @user = User.find(params[:id])
     if @user.id == current_user.id
@@ -44,7 +57,8 @@ class UsersController < ApplicationController
 
   private
     
+    # strong parameter
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :password_confirmation, :name, :birthday)
     end
 end
