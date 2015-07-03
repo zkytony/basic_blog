@@ -6,8 +6,20 @@
   <%= f.label :email %><br />
   <%= f.email_field :email, class: "form-control" %><br />
 
-  <%= f.label :password %><br />
-  <%= f.password_field :password, class: "form-control" %><br />
+  <% if sign_up or update %>
+
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class: "form-control" %><br />
+
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, {:start_year => 1900, :end_year => 2010}, {:class => "date-select"} %><br />
+
+  <% end %>
+
+  <% if !update %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, class: "form-control" %><br />
+  <% end %>
 
   <% if sign_up %>
     <%= f.label :password_confirmation, "Confirmation" %><br />
